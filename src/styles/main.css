@@ -3,7 +3,7 @@ html, body {
     padding: 0;
 }
 
-html, body, div, input {
+html, body, div, input, span {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
 }
 
@@ -152,12 +152,6 @@ article.container .context {
     clear: both;
 }
 
-.page-header {
-    padding-bottom: 9px;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-}
-
 article.container .context h1 {
     font-size: 36px;
 }
@@ -186,13 +180,17 @@ article.container .context h4 {
     border-bottom-style: solid;
 }
 
+.panel .header .title .fa span{
+    font-size: 40px;
+}
+
 .panel .header .title .message {
     float: right;
 }
 
 .panel .header .title .message strong.count {
     display: block;
-    font-size: 40px;
+    font-size: 50px;
     font-weight: bold;
     text-align: right;
 }
