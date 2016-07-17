@@ -4,7 +4,9 @@
     <title> What todo Application</title>
     <link rel="stylesheet" type="text/css" href="./libs/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="./styles/main.css">
-    <link rel="stylesheet" type="text/css" href="./styles/cherry.css">
+    <link rel="stylesheet" type="text/css" href="./styles/themes.css">
+    
+    <link rel="stylesheet" ng-href="./styles/themes/{{$root.current.theme.name}}.css">
 
 </head>
 
@@ -16,10 +18,10 @@
     <article class="container">
         <aside class="sidebar">
             <ul>
-                <li><a href="#/home"> <i class="fa fa-home"></i><span>Home</span></a></li>
-                <li><a href="#/settings"> <i class="fa fa-gear"></i><span>Settings</span></a></li>
-                <li><a href="#/about" class="select"><i class="fa fa-info-circle"></i><span>About</span></a>
-                <li><a href="#/help"><i class="fa fa-question-circle"></i><span>Help</span></a>
+                <li><a href="#/home" ng-class="{'select': $root.current.stateName === 'home'}"> <i class="fa fa-home"></i><span>Home</span></a></li>
+                <li><a href="#/settings" ng-class="{'select': $root.current.stateName === 'settings'}"> <i class="fa fa-gear"></i><span>Settings</span></a></li>
+                <li><a href="#/help" ng-class="{'select': $root.current.stateName === 'help'}"><i class="fa fa-question-circle"></i><span>Help</span></a>
+                <li><a href="#/about" ng-class="{'select': $root.current.stateName === 'about'}"><i class="fa fa-info-circle"></i><span>About</span></a>
             </ul>
         </aside>
         <section class="context">
@@ -39,6 +41,7 @@
 
         <script src="./app.js"></script>
         <script src="./services/todo-svc.js"></script>
+        <script src="./services/theme-svc.js"></script>
         
     </section>
 

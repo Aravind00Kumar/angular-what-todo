@@ -1,10 +1,17 @@
 (function () {
     'use strict'
     angular.module('app', ['ui.router'])
-        .run(['$rootScope', '$timeout', function ($rootScope, $timeout) {
+        .run(['$rootScope', '$timeout', 'theme-service', function ($rootScope, $timeout, themeService) {
+
+            $rootScope.current =  {
+                theme: themeService.getAll()[0],
+                stateName:''
+            }
+
             $rootScope.$on('$stateChangeSuccess',
                 function (event, toState, toParams, fromState, fromParams) {
-                });
+                    $rootScope.current.stateName = toState.name;
+            });
         }])
 
         // route configuration
@@ -44,7 +51,7 @@
             var vm = this;
 
             function init(vm) {
-                vm.title = 'Todo';
+                vm.title = 'Office';
                 vm.selected = {};
                 clear(vm);
                 getList(vm);
@@ -62,7 +69,7 @@
 
             function getList(vm) {
                 vm.todoList = todoService.getAll();
-                vm.unfinishedTasksCount = _.filter(vm.todoList, function(task){ return task.status===false; }).length;
+                vm.unfinishedTasksCount = _.filter(vm.todoList, function (task) { return task.status === false; }).length;
             }
 
             activate(vm);
@@ -88,16 +95,25 @@
                 getList(vm);
             }
 
-            this.changeStatus = function(item){
+            this.changeStatus = function (item) {
                 todoService.changeStatus(item.id);
                 getList(vm);
             }
 
         }])
 
-        .controller('SettingsController', [function () {
+        .controller('SettingsController', ['$rootScope','theme-service',function ($rootScope,themeService) {
             var vm = this;
+            
             this.title = 'Settings';
+
+            this.themes = themeService.getAll();
+            
+            this.changeTheme = function(item){
+                if($rootScope.current.theme!==item)
+                    $rootScope.current.theme =  item;
+            }
+
         }])
 
         .controller('HelpController', [function () {

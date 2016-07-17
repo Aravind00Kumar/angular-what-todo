@@ -180,7 +180,7 @@ article.container .context h4 {
     border-bottom-style: solid;
 }
 
-.panel .header .title .fa span{
+.panel .header .title .fa span {
     font-size: 40px;
 }
 
@@ -217,7 +217,7 @@ article.container .context h4 {
 }
 
 .panel .header .new button {
-    border-width: 1px ;
+    border-width: 1px;
     border-style: solid;
     height: 45px;
     min-width: 75px;
@@ -280,7 +280,6 @@ article.container .context h4 {
     margin: 0;
 }
 
-
 .panel .body .task-list .task input[type="checkbox"] {
     position: absolute;
     top: 15px;
@@ -293,10 +292,25 @@ article.container .context h4 {
     display: block;
     text-overflow: ellipsis;
 }
-.panel .body .task-list .task label.complete{
+
+.panel .body .task-list .task label.complete {
     text-decoration: line-through;
-    
 }
 
 
 /* https://kyusuf.com/post/completely-css-custom-checkbox-radio-buttons-and-select-boxes */
+
+/* Settings */
+
+.themes{
+    display: flex;
+}
+.themes .item{
+    margin: 10px;
+    height: 60px;
+    width: 60px;
+}
+.themes .item{
+    border-width: 2px;
+    border-style: dotted
+}
