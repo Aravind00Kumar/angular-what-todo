@@ -1,0 +1,11 @@
+{
+  "name": "what-todo",
+  "version": "1.0.0",
+  "description": "Sample todo project in angularjs 1.x",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aravind Kumar P",
+  "license": "ISC"
+}
